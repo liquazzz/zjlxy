@@ -1,19 +1,3 @@
-/*
-// 代码基本都抄的CM和天书大佬的项目，在此感谢各位大佬的无私奉献。
-// 支持xhttp和websocket传输，trojan和vless协议入站
-// ws模式的vless导入链接：vless://{这里写uuid}@104.16.40.11:2053?encryption=none&security=tls&sni={这里写域名}&alpn=http%2F1.1&fp=chrome&type=ws&host={这里写域名}#vless
-// ws模式的trojan导入链接：trojan://{这里写密码}@104.16.40.11:2053?security=tls&sni={这里写域名}&alpn=http%2F1.1&fp=chrome&allowInsecure=1&type=ws&host={这里写域名}#trojan
-// xhttp模式的vless导入链接：vless://{这里写uuid}@104.16.40.11:2053?encryption=none&security=tls&sni={这里写域名}&alpn=h2&fp=chrome&allowInsecure=1&type=xhttp&host={这里写域名}&mode=stream-one#vless-xhttp
-// xhttp模式的trojan导入链接：trojan://passwd@104.16.40.11:2053?security=tls&sni=sni&alpn=h2&fp=chrome&allowInsecure=1&type=xhttp&host=host&path=%2F&mode=stream-one#trojan-xhttp
-// 复制协议开头的导入链接导入再手动修改即可
- * ========================== URL路径参数速查表 =================================================================================
- * 多个参数用 & 连接, 示例: /?s5=host:port&ip=1.2.3.4:443   注: s5/http/nat64/ip 均支持逗号分隔多个地址以实现并发连接
- * s5/gs5/socks/s5all         - 直连失败SOCKS5代理 / 全局SOCKS5        示例: s5=user1:pass1@host1:port1,user2:pass2@host2:port2
- * http/ghttp/httpall         - 直连失败HTTP代理 / 全局HTTP            示例: http=user1:pass1@host1:port1,user2:pass2@host2:port2
- * nat64/gnat64/nat64all      - 直连失败NAT64转换 / 全局NAT64          示例: nat64=64:ff9b::,64:ff9b:1::
- * ip/pyip/proxyip            - 直连失败时的备用IP                     示例: ip=1.2.3.4:443,5.6.7.8:443
- * proxyall/globalproxy       - 全局代理标志,无s5和http参数时纯直连      示例: proxyall=1
- * ==========================================================================================================================*/
 import {connect} from 'cloudflare:sockets';
 const defaultUuid = ''; // 可在环境变量配置，变量名称为UUID，两个地方都不写为不验证uuid
 const defaultPassword = ''; // 可在环境变量配置，变量名称为PASSWORD，两个地方都不写为不验证密码
@@ -481,4 +465,5 @@ export default {
         }
         return new Response(html, {status: 200, headers: {'Content-Type': 'text/html; charset=UTF-8'}});
     }
+
 };
